@@ -1,5 +1,6 @@
 
 --MERGE ALL JANUARY TO DECEMBER DATA IN SINGLE TABLE 'Yearly_trip_data_2022' 
+
 Select *  
 INTO Annual_trip_data_2022
 From Trip_data_2022_01
@@ -36,5 +37,6 @@ FROM Trip_data_2022_11
 UNION ALL 
 SELECT *
 FROM Trip_data_2022_12
+  
 SELECT *
 FROM Annual_trip_data_2022
