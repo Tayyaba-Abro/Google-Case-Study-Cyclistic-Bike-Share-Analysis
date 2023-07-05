@@ -7,8 +7,8 @@
 ### Data Source: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
 ### SQL Codes
 - [Merge Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/1.%20Merge%20Data.sql) 
-- [Data Manipulation](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/2.%20Manipulate%20Data.sql)
-- [Analysis Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
+- [Manipulate data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/2.%20Manipulate%20Data.sql)
+- [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 ### Visualization
 - Tableau: [Cyclistic Dashboard](https://public.tableau.com/views/CyclisticDashboard_3/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
@@ -45,7 +45,7 @@ To address the business task of understanding how annual members and casual ride
 ### Process Phase:
 #### Data Cleaning in Excel:
 
-During the process phase, the data cleaning steps were carried out in Microsoft Excel. The following actions were performed: [Check Data Cleaning files](      )
+During the process phase, the data cleaning steps were carried out in [Microsoft Excel](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/tree/main/Excel-clean-data). The following actions were performed: 
 - **Checking for Duplicates:** The duplicate values were examined using built-in “Remove Duplicates” feature in Excel. This helped ensure data integrity and eliminate any duplicated entries.
 - **Validating Column Values:** The values in specific columns, such as rideable_type and member_casual, were verified to ensure consistency and accuracy. The only valid values, including classic_bike, docked_bike, electric_bike for rideable_type, and casual, member for member_casual, were retained.
 - **Removing Blank Values:** The data set was checked for incomplete or blank values across all columns. Rows with missing values, particularly in columns like start_station_name, start_station_id, end_station_name, and end_station_id, were removed to ensure data completeness.
@@ -60,51 +60,49 @@ By cleaning data in Excel, the dataset was refined, inconsistencies were address
 For data transformation, data processing was performed in SQL Server. The data from each month, spanning from January to December 2022, was imported and merged into a single table called “Annual_trip_data_2022”.The steps involved in this process are as follows:
 
 - **Importing Data:** The monthly files containing the ride data were imported into SQL Server.
-- **Creating the Annual Trip Data Table:** A new table named “Annual_trip_data_2022” was created using the SELECT INTO statement store the consolidated data for the entire year.
-- **Merging Data:** The data from each monthly table was merged into the “Annual_trip_data_2022” table using the UNION ALL statement. This combined all the records into a single dataset for further analysis.[Merge data](github link )
-- **Manipulate Data:** After merging data, a new table named “analyze_annual_trip_data” was generated. This table includes additional columns such as “month,” “day,” “hour,” and “duration_minutes” to facilitate the comparison and analysis of ride frequencies.[Manipulate Data](    )
+- **Merging Data:** A new table named “Annual_trip_data_2022” was created to store the consolidated data for the entire year.The data from tables were merged into the “Annual_trip_data_2022” table using the UNION ALL statement. SQL Query: [Merge Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/1.%20Merge%20Data.sql) 
+- **Manipulate Data:** After merging data, a new table named “analyze_annual_trip_data” was generated. This table includes additional columns such as “month,” “day,” “hour,” and “duration_minutes” to facilitate the comparison and analysis of ride frequencies. SQL Query: [Manipulate data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/2.%20Manipulate%20Data.sql)
 
 ### Analyze Phase:
 In the Analyze phase, we delve into the data to uncover insights and address the key findings related to how annual members and casual riders use Cyclistic bikes differently. The focus is on understanding their behavior, preferences, and patterns to inform marketing strategies aimed at converting casual riders into annual members. To address the key findings, the following analyses were performed in SQL Server. 
 
 #### 1. Percentage of Casual Riders vs Annual Members
-
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="316" alt="3  percentage of rides - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/cbe41202-cd83-4590-9a48-94b13261eda8">
 
 #### 2. Proportion of Rides by Bike Type 
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="446" alt="4  rides by bike types - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/d8eeca1e-1525-44ad-9bc2-8e9c29141857">
 
 #### 3. Percentage of Rides per Month
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="412" alt="5  rides per month - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/7bd52576-fe79-4c87-ac84-8aa8da958a48">
 
 #### 4. Number of Riders per Day
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="213" alt="6  number of rides by day - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/fc410eda-f427-444f-ac4f-e9f256933995">
 
 #### 5. Average Ride Duration by Day (in minute)
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="208" alt="7  average ride duration by days - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/edbe1c99-6a04-4e9e-a010-94b8ab9286fb">
 
 #### 6. Frequency of Rides per Hour
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 ![number of rides per hour](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/a0ba5f8f-efb3-4ecf-a8ef-03cba087cbdc)
 
 #### 7. Percentage of Rides per Season 
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="425" alt="9  rides by season - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/53984f6b-b0e3-49c2-bea3-e8de2c2717d2">
 
 #### 8. Percentage of Rides per Time Zone 
-[Analyze Data](
+SQL Query: [Analyze Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 
 <img width="421" alt="10  percentage of rides by time zone - result" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/3c3a34cb-0410-4f1d-893c-ef8362907082">
 
