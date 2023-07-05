@@ -6,9 +6,9 @@
 ## Quick Links:
 ### Data Source: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
 ### SQL Codes
-- Data Merge: 
-- Data Manipulation:
-- Data Analysis: 
+- [Merge Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/1.%20Merge%20Data.sql) 
+- [Data Manipulation](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/2.%20Manipulate%20Data.sql)
+- [Analysis Data](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/blob/main/3.%20Analyze%20Data.sql) 
 ### Visualization
 - Tableau: [Cyclistic Dashboard](https://public.tableau.com/views/CyclisticDashboard_3/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
@@ -44,8 +44,8 @@ To address the business task of understanding how annual members and casual ride
 
 ### Process Phase:
 #### Data Cleaning in Excel:
-[Check cleaned files](      )
-During the process phase, the data cleaning steps were carried out in Microsoft Excel. The following actions were performed:
+
+During the process phase, the data cleaning steps were carried out in Microsoft Excel. The following actions were performed: [Check Data Cleaning files](      )
 - **Checking for Duplicates:** The duplicate values were examined using built-in “Remove Duplicates” feature in Excel. This helped ensure data integrity and eliminate any duplicated entries.
 - **Validating Column Values:** The values in specific columns, such as rideable_type and member_casual, were verified to ensure consistency and accuracy. The only valid values, including classic_bike, docked_bike, electric_bike for rideable_type, and casual, member for member_casual, were retained.
 - **Removing Blank Values:** The data set was checked for incomplete or blank values across all columns. Rows with missing values, particularly in columns like start_station_name, start_station_id, end_station_name, and end_station_id, were removed to ensure data completeness.
