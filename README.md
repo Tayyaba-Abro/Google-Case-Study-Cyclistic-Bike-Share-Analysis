@@ -1,6 +1,7 @@
 # Case Study 1: Differentiating Casual Riders and Annual Members - Cyclistic Bike Share Analysis
-
-![FINAL1](https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/274362c5-78be-406d-be38-e06090ad52ac)
+<p align="center">
+<img width="519" alt="Capture" src="https://github.com/Tayyaba-Abro/Case-Study-Cyclistic-Bike-Share-Analysis/assets/47588244/39b0b926-c041-4208-bf48-45b3b4dbabd9">
+</p>
 
 ## Quick Links:
 ### Data Source: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
@@ -9,7 +10,7 @@
 - Data Manipulation:
 - Data Analysis: 
 ### Visualization
-- Tableau
+- Tableau: [Cyclistic Dashboard](https://public.tableau.com/views/CyclisticDashboard_3/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ## Introduction
 This case study presents a data analysis project conducted as part of the Google Data Analytics Professional Certificate course, Capstone Project, focusing on Cyclistic, a bike-share company.
@@ -154,7 +155,7 @@ Based on the findings of my analysis, some key takeaways can be derived:
 - **Peak Usage Hour:** Both annual members and casual riders experience peak usage at 5 p.m., with annual members having a higher number of rides.
 - **Seasonal Variation:** Members have the highest proportion of rides in all seasons, but winters see the highest proportion of annual members while summers see the highest proportion of casual rides.
 - **Time Zone Distribution:** Annual members dominate the morning, afternoon, and evening time zones, while casual riders have a higher proportion of rides during the night.
-- 
+
 #### Strategies to convert more Casual Riders into Annual Member
 
 - **Targeted Promotions:** Offer exclusive discounts or incentives for casual riders to upgrade to annual memberships, highlighting the benefits and cost savings of long-term commitment.
