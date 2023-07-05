@@ -1,5 +1,6 @@
+-- Analyze Data
 
--- Percentage of Casual Rides vs Annual Member
+--1. Percentage of Casual Rides vs Annual Member
 
 SELECT member_casual AS membership_type, 
 COUNT (member_casual) AS total_ride, 
@@ -7,10 +8,10 @@ SUM (COUNT (member_casual)) OVER () AS total_membership,
 CONCAT (CAST (COUNT (member_casual) * 100.0/ SUM (COUNT (member_casual)) OVER () AS DECIMAL (10,2)), '%') membership_percentage
 FROM Annual_trip_data_2022
 WHERE member_casual IS NOT NULL
-GROUP BY member_casual
+GROUP BY member_casual;
 
-
--- Propotion of rides by Bike Type 
+	
+--2. Propotion of rides by Bike Type 
 
 SELECT 
 rideable_type AS bike_type,
@@ -21,10 +22,10 @@ CONCAT (CAST (COUNT (rideable_type) * 100.0/ SUM (COUNT (rideable_type)) OVER (P
 FROM analyze_annual_trip_data
 WHERE member_casual IS NOT NULL
 GROUP BY rideable_type, member_casual
-ORDER BY rideable_type
+ORDER BY rideable_type;
 
 
--- Percentage of Rides per Month
+--3. Percentage of Rides per Month
 
 SELECT member_casual AS membership_type, months,
 COUNT (months) AS membership_rides,
@@ -47,10 +48,10 @@ CASE months
         WHEN 'October' THEN 10
         WHEN 'November' THEN 11
         WHEN 'December' THEN 12
-END, member_casual
+END, member_casual;
 
 
--- Number of Rides by Days
+--4. Number of Rides by Days
 
 SELECT member_casual AS membership_type, 
 weekdays,
@@ -67,10 +68,10 @@ CASE weekdays
 	 WHEN 'Thursday' THEN 5
 	 WHEN 'Friday' THEN 6
 	 WHEN 'Saturday' THEN 7 
-END, member_casual
+END, member_casual;
 
 
--- Average ride duration by day 
+--5. Average ride duration by day 
 
 SELECT member_casual AS membership_type, 
 weekdays, 
@@ -87,10 +88,10 @@ CASE weekdays
 	 WHEN 'Thursday' THEN 5
 	 WHEN 'Friday' THEN 6
 	 WHEN 'Saturday' THEN 7 
-END, member_casual
+END, member_casual;
 
 
--- Number of rides by hour  
+--6. Number of rides by hour  
 
 SELECT member_casual AS membership_type, 
 hours,
@@ -98,10 +99,10 @@ COUNT(hours) AS rides_per_hour
 FROM analyze_annual_trip_data
 WHERE member_casual IS NOT NULL 
 GROUP BY member_casual, hours 
-ORDER BY hours, membership_type
+ORDER BY hours, membership_type;
 
 
--- Percentage of Rides per Season
+--7. Percentage of Rides per Season
 
 WITH cte AS 
 (
@@ -124,10 +125,10 @@ SELECT
    CONCAT (CAST (COUNT (season) * 100.0/ SUM (COUNT (season)) OVER (Partition by season) AS DECIMAL (10,2)), '%') AS percentage_per_season
 FROM cte
 GROUP BY membership_type, season
-ORDER BY season, membership_type
+ORDER BY season, membership_type;
 
 
--- Percentage of rides in each time zone 
+--8. Percentage of rides in each time zone 
 
 WITH CTE AS 
 (
@@ -149,4 +150,4 @@ SELECT
   CONCAT (CAST (COUNT (time_zone) * 100.0/ SUM (COUNT (time_zone)) OVER (Partition by time_zone) AS DECIMAL (10,2)), '%') AS percentage_of_rides
   FROM cte 
   GROUP BY time_zone, membership_type
-  ORDER BY time_zone, membership_type
+  ORDER BY time_zone, membership_type;
