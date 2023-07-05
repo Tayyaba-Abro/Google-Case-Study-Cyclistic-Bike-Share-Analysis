@@ -45,30 +45,26 @@ To address the business task of understanding how annual members and casual ride
 #### Data Cleaning in Excel:
 [Check cleaned files](      )
 During the process phase, the data cleaning steps were carried out in Microsoft Excel. The following actions were performed:
-- Checking for Duplicates: The duplicate values were examined using built-in “Remove Duplicates” feature in Excel. This helped ensure data integrity and eliminate any duplicated entries.
-- Validating Column Values: The values in specific columns, such as rideable_type and member_casual, were verified to ensure consistency and accuracy. The only valid values, including classic_bike, docked_bike, electric_bike for rideable_type, and casual, member for member_casual, were retained.
-- Removing Blank Values: The data set was checked for incomplete or blank values across all columns. Rows with missing values, particularly in columns like start_station_name, start_station_id, end_station_name, and end_station_id, were removed to ensure data completeness.
-- Removing Unwanted Columns: Columns start_lat, start_lng, end_lat, and end_lng, which were not relevant to the analysis, were removed from each file to streamline the dataset and focus on the essential variables.
-- Adding the Ride Length Column: A new column named “ride_length” was added to calculate the duration of each ride. The value in the ride_length column was obtained by subtracting the started_at timestamp from the ended_at timestamp.
-- Setting the Time Format: The ride_length column was formatted as “HH:MM:SS” using the “Format > Cells > Time > 37:30:55” option in Excel. This ensured that the ride duration was presented in a standardized time format.
-- Applying Conditional Formatting: Conditional formatting was applied to the ride_length column to highlight ride lengths that fell outside the desired range. Specifically, any ride length values less than 00:01:00 (one minute) or greater than 24:00:00 (24 hours) were formatted differently, making them easily identifiable for further analysis or potential removal.
-- Sorting the Table: The table was sorted in ascending order based on the started_at column to ensure data consistency.
+- **Checking for Duplicates:** The duplicate values were examined using built-in “Remove Duplicates” feature in Excel. This helped ensure data integrity and eliminate any duplicated entries.
+- **Validating Column Values:** The values in specific columns, such as rideable_type and member_casual, were verified to ensure consistency and accuracy. The only valid values, including classic_bike, docked_bike, electric_bike for rideable_type, and casual, member for member_casual, were retained.
+- **Removing Blank Values:** The data set was checked for incomplete or blank values across all columns. Rows with missing values, particularly in columns like start_station_name, start_station_id, end_station_name, and end_station_id, were removed to ensure data completeness.
+- **Removing Unwanted Columns:** Columns start_lat, start_lng, end_lat, and end_lng, which were not relevant to the analysis, were removed from each file to streamline the dataset and focus on the essential variables.
+- **Adding the Ride Length Column:** A new column named “ride_length” was added to calculate the duration of each ride. The value in the ride_length column was obtained by subtracting the started_at timestamp from the ended_at timestamp.
+- **Setting the Time Format:** The ride_length column was formatted as “HH:MM:SS” using the “Format > Cells > Time > 37:30:55” option in Excel. This ensured that the ride duration was presented in a standardized time format.
+- **Applying Conditional Formatting:** Conditional formatting was applied to the ride_length column to highlight ride lengths that fell outside the desired range. Specifically, any ride length values less than 00:01:00 (one minute) or greater than 24:00:00 (24 hours) were formatted differently, making them easily identifiable for further analysis or potential removal.
+- **Sorting the Table:** The table was sorted in ascending order based on the started_at column to ensure data consistency.
 By cleaning data in Excel, the dataset was refined, inconsistencies were addressed, and the ride length information was formatted appropriately for subsequent analysis.
 
 #### Data Transformation in SQL
-For data transformation, data processing was performed in SQL Server. The data from each month, spanning from January to December 2022, was imported and merged into a single table called “Annual_trip_data_2022”.
+For data transformation, data processing was performed in SQL Server. The data from each month, spanning from January to December 2022, was imported and merged into a single table called “Annual_trip_data_2022”.The steps involved in this process are as follows:
 
-The steps involved in this process are as follows:
-
-- Importing Data: The monthly files containing the ride data were imported into SQL Server.
-- Creating the Annual Trip Data Table: A new table named “Annual_trip_data_2022” was created using the SELECT INTO statement store the consolidated data for the entire year.
-- Merging Data: The data from each monthly table was merged into the “Annual_trip_data_2022” table using the UNION ALL statement. This combined all the records into a single dataset for further analysis.[Merge data](github link )
-- Afterward, a new table named “analyze_annual_trip_data” was generated. This table includes additional columns such as “month,” “day,” “hour,” and “duration_minutes” to facilitate the comparison and analysis of ride frequencies.[Manipulate Data](    )
+- **Importing Data:** The monthly files containing the ride data were imported into SQL Server.
+- **Creating the Annual Trip Data Table:** A new table named “Annual_trip_data_2022” was created using the SELECT INTO statement store the consolidated data for the entire year.
+- **Merging Data:** The data from each monthly table was merged into the “Annual_trip_data_2022” table using the UNION ALL statement. This combined all the records into a single dataset for further analysis.[Merge data](github link )
+- **Manipulate Data:** After merging data, a new table named “analyze_annual_trip_data” was generated. This table includes additional columns such as “month,” “day,” “hour,” and “duration_minutes” to facilitate the comparison and analysis of ride frequencies.[Manipulate Data](    )
 
 ### Analyze Phase:
-In the Analyze phase, we delve into the data to uncover insights and address the key findings related to how annual members and casual riders use Cyclistic bikes differently. The focus is on understanding their behavior, preferences, and patterns to inform marketing strategies aimed at converting casual riders into annual members.
-
-To address the key findings, the following analyses were performed in SQL Server. 
+In the Analyze phase, we delve into the data to uncover insights and address the key findings related to how annual members and casual riders use Cyclistic bikes differently. The focus is on understanding their behavior, preferences, and patterns to inform marketing strategies aimed at converting casual riders into annual members. To address the key findings, the following analyses were performed in SQL Server. 
 
 #### 1. Percentage of Casual Riders vs Annual Members
 
