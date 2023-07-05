@@ -1,5 +1,5 @@
   
-  -- Segregate data to new table 
+  -- Manipulate data to separate minutes, hours, days and months into new folder 'analyze_annual_trip_data'
 
   IF OBJECT_ID('analyze_annual_trip_data', 'U') IS NOT NULL
   DROP TABLE analyze_annual_trip_data
